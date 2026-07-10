@@ -1,0 +1,134 @@
+.achievements__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+.achievements__stat {
+  text-align: center;
+  padding: var(--space-lg) var(--space-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--duration-slow) var(--ease-out);
+}
+.achievements__stat.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.achievements__stat-value {
+  display: block;
+  font-size: var(--fs-2xl);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-neon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+.achievements__stat-label {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+.achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+.achievements__card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  transition: all var(--duration-base) var(--ease-out);
+}
+.achievements__card:hover {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-glow-gold);
+}
+.achievements__card:hover .achievements__category-badge {
+  animation: amberGlow 1.5s ease-in-out infinite;
+}
+.achievements__card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.achievements__card:hover .achievements__card-glow { opacity: 1; }
+.achievements__image-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.achievements__image {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+.achievements__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg-secondary) 0%, transparent 60%);
+  pointer-events: none;
+}
+.achievements__content {
+  padding: var(--space-md) var(--space-lg);
+}
+.achievements__badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: var(--space-sm);
+}
+.achievements__category-badge {
+  display: inline-block;
+  padding: 0.2em 0.7em;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--accent-amber-dim);
+  color: var(--accent-amber);
+  border: 1px solid rgba(255, 179, 0, 0.3);
+}
+.achievements__year-badge {
+  display: inline-block;
+  padding: 0.2em 0.7em;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+.achievements__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.achievements__institution {
+  font-size: var(--fs-sm);
+  color: var(--accent-gold);
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+.achievements__description {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .achievements__stats { grid-template-columns: repeat(2, 1fr); }
+  .achievements__grid { grid-template-columns: 1fr; }
+}

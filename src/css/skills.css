@@ -1,0 +1,87 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+.skills__category {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--duration-base) var(--ease-out);
+}
+.skills__category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(212, 168, 67, 0.15);
+}
+.skills__category:hover .skills__category-icon {
+  animation: spinSlow 2s linear;
+}
+.skills__category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-md);
+}
+.skills__category-icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.skills__category-title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+.skills__bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.skills__bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.skills__bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills__bar-name {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.skills__bar-value {
+  font-size: var(--fs-xs);
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.skills__bar-track {
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.skills__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-neon));
+  border-radius: var(--radius-full);
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.skills__bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0;
+  width: 8px; height: 100%;
+  background: var(--accent-neon);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--accent-neon);
+}
+@media (max-width: 768px) {
+  .skills__grid { grid-template-columns: 1fr; }
+  .skills__category { padding: var(--space-md); }
+}

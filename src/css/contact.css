@@ -1,0 +1,154 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+.contact__form-panel {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+.contact__form-title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: #111;
+  margin-bottom: var(--space-lg);
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.contact__field { position: relative; }
+.contact__input {
+  width: 100%;
+  padding: 1rem 0 0.5rem;
+  font-size: var(--fs-base);
+  font-family: var(--font-primary);
+  color: #111;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-smooth);
+}
+.contact__input:focus { border-bottom-color: transparent; }
+.contact__textarea { resize: vertical; min-height: 120px; }
+.contact__label {
+  position: absolute;
+  left: 0; top: 1rem;
+  font-size: var(--fs-base);
+  color: #888;
+  pointer-events: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.contact__field.focused .contact__label {
+  top: -0.2rem;
+  font-size: var(--fs-xs);
+  color: var(--accent-gold);
+}
+.contact__underline {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-neon));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.contact__field.focused .contact__underline { transform: scaleX(1); }
+.contact__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.9em 2em;
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--bg-primary);
+  background: var(--accent-gold);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--space-sm);
+}
+.contact__submit::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: none;
+}
+.contact__submit:hover::before {
+  animation: shimmerSweep 0.6s ease-in-out;
+}
+.contact__submit:hover {
+  background: var(--accent-warm);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.3);
+}
+.contact__info-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+.contact__info-title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+.contact__info-subtitle {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+.contact__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact__info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  text-decoration: none;
+  color: inherit;
+}
+.contact__info-row:hover {
+  background: var(--bg-tertiary);
+  transform: translateX(6px);
+}
+.contact__info-row:hover .contact__info-icon { color: var(--accent-gold); }
+.contact__info-icon {
+  color: var(--text-muted);
+  transition: color var(--duration-fast) var(--ease-smooth);
+  flex-shrink: 0;
+}
+.contact__info-text {
+  display: flex;
+  flex-direction: column;
+}
+.contact__info-label {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.contact__info-value {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .contact__grid { grid-template-columns: 1fr; }
+  .contact__form-panel, .contact__info-panel { padding: var(--space-lg) var(--space-md); }
+}

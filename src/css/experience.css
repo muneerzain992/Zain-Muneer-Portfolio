@@ -1,0 +1,158 @@
+.experience__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  position: relative;
+}
+.experience__timeline::before {
+  content: '';
+  position: absolute;
+  left: 299px;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-gold), var(--accent-neon), transparent);
+}
+.experience__card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--duration-base) var(--ease-out);
+}
+.experience__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(212, 168, 67, 0.2);
+}
+.experience__card-left {
+  background: var(--bg-tertiary);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-right: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+.experience__card-left::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(to bottom, var(--accent-gold), var(--accent-neon));
+}
+.experience__company {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.experience__duration {
+  font-size: var(--fs-sm);
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+.experience__location {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.experience__card-right {
+  padding: var(--space-md) var(--space-lg);
+}
+.experience__card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+.experience__designation {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+.experience__type-badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  white-space: nowrap;
+}
+.experience__card:hover .experience__type-badge {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+.experience__section { margin-bottom: var(--space-md); }
+.experience__section:last-child { margin-bottom: 0; }
+.experience__section-title {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+.experience__section-title--achievement {
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.experience__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.experience__bullet {
+  flex-shrink: 0;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-neon);
+  margin-top: 0.55em;
+}
+.experience__bullet--gold { background: var(--accent-gold); }
+.experience__list-item--achievement { color: var(--text-primary); }
+
+.experience__letter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 0.85em;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--accent-gold);
+  border: 1px solid var(--border-accent);
+  background: var(--accent-gold-dim);
+  border-radius: var(--radius-sm);
+  margin-top: auto;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  width: fit-content;
+}
+
+.experience__letter-link:hover {
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+@media (max-width: 900px) {
+  .experience__timeline::before { display: none; }
+  .experience__card { grid-template-columns: 1fr; }
+  .experience__card-left { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .experience__card-right { padding: var(--space-md); }
+}
