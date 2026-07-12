@@ -7,6 +7,7 @@ const projects = [
     type: 'Full-Stack Machine Learning Application',
     duration: '3 Months',
     github: 'https://github.com/muneerzain992/AI-salary-prection-and-recommendation.git',
+    liveLink: 'https://ai-salary-prection-and-recommendati.vercel.app/',
     image: '/projects/Salary ai prediction landing page.png',
     description: 'An enterprise-grade decoupled application engineered to estimate accurate industrial market salary ranges across 9 unique professional variables. The system incorporates an automated backend estimation worker coupled with a visual analytics dashboard.',
     outcomes: [
@@ -15,6 +16,19 @@ const projects = [
       'Built a highly responsive user layout using React.js, Vite, and Tailwind CSS, featuring continuous delivery hosting on Vercel and Render.',
     ],
     technologies: ['Python', 'Flask API', 'Scikit-learn', 'Pandas', 'NumPy', 'React.js', 'Vite', 'Tailwind CSS', 'Axios', 'Gunicorn', 'Vercel', 'Render', 'Git'],
+  },
+  {
+    title: 'Myst Water E-Commerce Experience',
+    type: 'Eco-Luxury Product Experience & Full-Funnel Marketing System',
+    duration: '3 Months',
+    liveLink: 'https://muneerzain992.github.io/MYST-WATER-/',
+    image: '/projects/myst_water.jpg',
+    description: 'An elite, modern digital ecosystem engineered to launch, position, and scale a premium eco-friendly water bottle brand. The architecture bridges an immersive, hyper-interactive visual user experience with a high-performance digital marketing pipeline to drive automated lead generation and optimized conversion funnels.',
+    outcomes: [
+      'Architected an immersive UI/UX ecosystem using React.js and advanced motion libraries to deploy an interactive, 3-dimensional product customizer featuring seamless real-time rendering of 5 signature color profiles.',
+      'Engineered a multi-stage Meta Ads lead acquisition funnel, implementing precise targeting strategies and robust conversion tracking to maximize digital marketing ROI.'
+    ],
+    technologies: ['React.js', 'Motion Libraries', 'Meta Ads', 'UI/UX Ecosystem', 'Conversion Funnels'],
   },
   {
     title: 'Ehsas Hub – AI-Enhanced Matchmaking & Donation Portal',
@@ -97,6 +111,18 @@ const Projects = () => {
                     </div>
                   </div>
 
+                  {project.liveLink && (
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="projects__github-btn projects__live-btn"
+                      style={{ background: 'var(--accent-gold)', color: 'var(--bg-primary)' }}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                      <span style={{ color: 'var(--bg-primary)' }}>Live Demo</span>
+                    </a>
+                  )}
                   {project.github && (
                     <a 
                       href={project.github} 
