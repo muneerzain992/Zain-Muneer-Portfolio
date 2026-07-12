@@ -49,7 +49,7 @@ const Projects = () => {
               <div className="projects__card-left">
                 <div className="projects__image-container">
                   <img 
-                    src={project.image} 
+                    src={import.meta.env.BASE_URL ? `${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}` : project.image} 
                     alt={project.title} 
                     className="projects__image" 
                     onError={(e) => {

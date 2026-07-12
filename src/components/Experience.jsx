@@ -97,7 +97,7 @@ const Experience = () => {
                 
                 {exp.letter && (
                   <a 
-                    href={exp.letter} 
+                    href={import.meta.env.BASE_URL ? `${import.meta.env.BASE_URL}${exp.letter.replace(/^\//, '')}` : exp.letter} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="experience__letter-link"

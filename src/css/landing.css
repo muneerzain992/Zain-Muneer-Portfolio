@@ -59,26 +59,11 @@
   position: relative;
   display: inline-block;
   color: var(--text-primary);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-.landing__name-glitch::before,
-.landing__name-glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  opacity: 0;
-}
-.landing__name-glitch:hover::before {
-  animation: glitchShift 0.4s ease-in-out;
+.landing__name-glitch:hover {
   color: var(--accent-gold);
-  opacity: 0.8;
-  clip-path: inset(0 0 50% 0);
-}
-.landing__name-glitch:hover::after {
-  animation: glitchShift 0.4s ease-in-out 0.05s;
-  color: var(--accent-gold);
-  opacity: 0.8;
-  clip-path: inset(50% 0 0 0);
+  text-shadow: 0 0 20px rgba(212, 168, 67, 0.4);
 }
 .landing__designations {
   font-size: var(--fs-md);

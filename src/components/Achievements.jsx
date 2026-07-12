@@ -67,7 +67,7 @@ const Achievements = () => {
           {achievements.map((achievement, index) => (
             <div key={index} className="achievements__card reveal-scale" style={{ transitionDelay: `${0.3 + index * 0.15}s` }}>
               <div className="achievements__image-wrapper">
-                <img src={achievement.image} alt={achievement.title} className="achievements__image" />
+                <img src={import.meta.env.BASE_URL ? `${import.meta.env.BASE_URL}${achievement.image.replace(/^\//, '')}` : achievement.image} alt={achievement.title} className="achievements__image" />
                 <div className="achievements__image-overlay" />
               </div>
               <div className="achievements__content">

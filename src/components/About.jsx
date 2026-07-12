@@ -3,17 +3,17 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import '../css/about.css';
 
 const About = () => {
-  const [imgSrc, setImgSrc] = useState('/Profile picture.PNG');
+  const base = import.meta.env.BASE_URL || '/';
+  const fallbacks = [
+    `${base}Profile picture.PNG`,
+    `${base}profile_photo.PNG`,
+    `${base}profile_photo.png`,
+    `${base}profile_photo.jpg`,
+    `${base}profile_photo.jpeg`
+  ];
+  const [imgSrc, setImgSrc] = useState(fallbacks[0]);
   const [fallbackIndex, setFallbackIndex] = useState(0);
   const sectionRef = useScrollReveal();
-
-  const fallbacks = [
-    '/Profile picture.PNG',
-    '/profile_photo.PNG',
-    '/profile_photo.png',
-    '/profile_photo.jpg',
-    '/profile_photo.jpeg'
-  ];
 
   const handleImgError = () => {
     if (fallbackIndex < fallbacks.length - 1) {

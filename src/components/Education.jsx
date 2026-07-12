@@ -2,6 +2,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import '../css/education.css';
 
 const Education = () => {
+  const base = import.meta.env.BASE_URL || '/';
   const sectionRef = useScrollReveal();
   const highlights = [
     'Core Academic Domains: Operating Systems, Computer Networks & Architecture, and Information Security.',
@@ -11,7 +12,7 @@ const Education = () => {
 
   return (
     <section id="education" className="section education" ref={sectionRef}>
-      <div className="education__bg-watermark" style={{ backgroundImage: "url('/education/Bachelors Picture.jfif')" }} />
+      <div className="education__bg-watermark" style={{ backgroundImage: `url('${base}education/Bachelors Picture.jfif')` }} />
       <div className="container education__relative">
         <div className="section-header">
           <h2 className="section-title reveal">Education</h2>
@@ -22,7 +23,7 @@ const Education = () => {
           <div className="education__vertical-layout">
             <div className="education__img-wrapper-centered">
               <img 
-                src="/education/Bachelors Picture.jfif" 
+                src={`${base}education/Bachelors Picture.jfif`} 
                 alt="BSCS Graduation Portrait" 
                 className="education__certificate-img"
               />
@@ -40,7 +41,7 @@ const Education = () => {
               </p>
 
               <a 
-                href="/education/Degree certificate Bachelors.jpg" 
+                href={`${base}education/Degree certificate Bachelors.jpg`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="education__degree-link"

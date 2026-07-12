@@ -59,7 +59,9 @@ const CertCard = ({ cert, index }) => {
     };
   }, []);
 
-  const currentImage = cert.isMulti ? cert.images[activeSubIndex] : cert.image;
+  const base = import.meta.env.BASE_URL || '/';
+  const rawImage = cert.isMulti ? cert.images[activeSubIndex] : cert.image;
+  const currentImage = base + rawImage.replace(/^\//, '');
   const currentName = cert.isMulti ? cert.names[activeSubIndex] : cert.name;
 
   const nextCert = (e) => {
