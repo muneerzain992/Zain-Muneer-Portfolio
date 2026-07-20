@@ -3,12 +3,27 @@ import '../css/projects.css';
 
 const projects = [
   {
+    title: 'Dr Farhat Hashmi Online Quran Academy',
+    type: 'Full-Stack Next.js Learning Platform',
+    duration: '3 Months',
+    github: 'https://github.com/muneerzain992/Online-Quran-Academy-.git',
+    liveLink: 'https://online-quran-academy-rho.vercel.app',
+    image: '/projects/quran_academy.png',
+    description: 'A production-ready, multilingual online Quran academy built for overseas Muslim families. The platform delivers live one-to-one class booking, role-based dashboards, Stripe-ready pricing, SEO-optimized content, and a polished marketing experience deployed on Vercel with Supabase Postgres.',
+    outcomes: [
+      'Designed and shipped a complete full-stack academy website with Auth.js authentication, Prisma ORM, and role-based access for Admin, Teacher, and Student dashboards.',
+      'Implemented internationalization for English, Urdu, and Arabic with RTL support, plus a responsive, animated marketing UI optimized for mobile and desktop performance.',
+      'Deployed a SEO-focused production site on Vercel with Supabase Postgres, structured data, keyword-rich blog content, and a free-trial booking flow for worldwide students.',
+    ],
+    technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Supabase', 'Auth.js (NextAuth)', 'next-intl', 'Stripe', 'Framer Motion', 'Lenis', 'Vercel', 'Git'],
+  },
+  {
     title: 'AI Salary Prediction & Recommendation System',
     type: 'Full-Stack Machine Learning Application',
     duration: '3 Months',
     github: 'https://github.com/muneerzain992/AI-salary-prection-and-recommendation.git',
     liveLink: 'https://ai-salary-prection-and-recommendati.vercel.app/',
-    image: '/projects/Salary ai prediction landing page.png',
+    image: '/projects/salary_ai_prediction.png',
     description: 'An enterprise-grade decoupled application engineered to estimate accurate industrial market salary ranges across 9 unique professional variables. The system incorporates an automated backend estimation worker coupled with a visual analytics dashboard.',
     outcomes: [
       'Audited and deployed an optimized Scikit-learn Linear Regression model using clean multi-variable correlation encoding and joblib serialization.',
@@ -23,7 +38,7 @@ const projects = [
     duration: '3 Months',
     liveLink: 'https://muneerzain992.github.io/MYST-WATER-/',
     github: 'https://github.com/muneerzain992/MYST-WATER-.git',
-    image: '/projects/myst_water.jpg',
+    image: '/projects/myst_water.png',
     description: 'An elite, modern digital ecosystem engineered to launch, position, and scale a premium eco-friendly water bottle brand. The architecture bridges an immersive, hyper-interactive visual user experience with a high-performance digital marketing pipeline to drive automated lead generation and optimized conversion funnels.',
     outcomes: [
       'Architected an immersive UI/UX ecosystem using React.js and advanced motion libraries to deploy an interactive, 3-dimensional product customizer featuring seamless real-time rendering of 5 signature color profiles.',
